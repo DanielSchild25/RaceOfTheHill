@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 240b1e8fd97e4e747b679eba2e89b713
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 6627766950150504862
+    second: Circle|Action
+  - first:
+      74: 6997882522552206460
+    second: Circle|CircleAction
+  - first:
+      74: -7990677410061033207
+    second: Circle|CylinderAction
+  - first:
+      74: -8907353557592765773
+    second: Circle|CylinderAction.001
+  - first:
+      74: -6334199396957704519
+    second: Circle|CylinderAction.002
+  - first:
+      74: -4818285987071813649
+    second: Circle|CylinderAction.003
+  - first:
+      74: -2835163492405589132
+    second: Circle|CylinderAction.004
+  - first:
+      74: 4432137196519215698
+    second: Circle|Spring
+  - first:
+      74: 6967685826455796954
+    second: Circle|X
+  - first:
+      74: -6434805762499955607
+    second: Cylinder|Action
+  - first:
+      74: 3870611473932127853
+    second: Cylinder|CircleAction
+  - first:
+      74: -88723805440604879
+    second: Cylinder|CylinderAction
+  - first:
+      74: -6242241587816052237
+    second: Cylinder|CylinderAction.001
+  - first:
+      74: 4372184618834679938
+    second: Cylinder|CylinderAction.002
+  - first:
+      74: -7186322825509058839
+    second: Cylinder|CylinderAction.003
+  - first:
+      74: 1437564002523176561
+    second: Cylinder|CylinderAction.004
+  - first:
+      74: -1143799440863625177
+    second: Cylinder|Spring
+  - first:
+      74: 7822833796736462495
+    second: Cylinder|X
+  - first:
+      74: 6278029279821259226
+    second: Cube.001|Action
+  - first:
+      74: 8340127086538817526
+    second: Cube.001|CircleAction
+  - first:
+      74: 8199798356239145933
+    second: Cube.001|CylinderAction
+  - first:
+      74: 5742391347210522988
+    second: Cube.001|CylinderAction.001
+  - first:
+      74: 3316526675742036289
+    second: Cube.001|CylinderAction.002
+  - first:
+      74: 6220344384978666616
+    second: Cube.001|CylinderAction.003
+  - first:
+      74: 3443193231705087445
+    second: Cube.001|CylinderAction.004
+  - first:
+      74: 8468467393683762915
+    second: Cube.001|Spring
+  - first:
+      74: 7609710750110729369
+    second: Cube.001|X
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 1
+    importConstraints: 1
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

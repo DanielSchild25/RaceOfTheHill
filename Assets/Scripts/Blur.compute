@@ -1,0 +1,122 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+Texture2D<float4> Input;
+bool horizontal;
+int blurSize;
+
+float avg = 0;
+int blurPixelCount = 0;
+
+void AddPixel(float4 pixel)
+{
+    avg += pixel.a;
+    blurPixelCount++;
+}
+
+void ResetPixel()
+{
+    avg = 0.0f;
+    blurPixelCount = 0;
+}
+
+void CalcPixel()
+{
+    avg = avg / blurPixelCount;
+}
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    int _W, _H;
+    Input.GetDimensions(_W, _H);
+    int xx = id.x, yy = id.y, x, y;
+
+    if (horizontal)
+    {
+        ResetPixel();
+
+        //Right side of pixel
+        for (x = xx; (x < xx + blurSize && x < _W); x++)
+            AddPixel(Input.Load(int3(x, yy, 0)));
+
+        //Left side of pixel
+        for (x = xx; (x > xx - blurSize && x > 0); x--)
+            AddPixel(Input.Load(int3(x, yy, 0)));
+
+        CalcPixel();
+                
+        Result[float2(xx, yy)] = float4(0, 0, 0, avg);
+    }
+    else
+    {
+        ResetPixel();
+
+        //Over pixel
+        for (y = yy; (y < yy + blurSize && y < _H); y++)
+            AddPixel(Input.Load(int3(xx, y, 0)));
+        
+        //Under pixel
+        for (y = yy; (y > yy - blurSize && y > 0); y--)
+            AddPixel(Input.Load(int3(xx, y, 0)));
+
+        CalcPixel();
+                
+        Result[float2(xx, yy)] = float4(0, 0, 0, avg);
+    }
+}
+
+/*
+uint _W, _H;
+    Input.GetDimensions(_W, _H);
+    int xx, yy, x, y;
+
+    if (horizontal)
+    {
+        for (yy = 0; yy < _H; yy++)
+        {
+            for (xx = 0; xx < _W; xx++)
+            {
+                ResetPixel();
+
+                    //Right side of pixel
+                for (x = xx; (x < xx + blurSize && x < _W); x++)
+                    AddPixel(Input.Load(int3(x, yy, 0)));
+
+                    //Left side of pixel
+                for (x = xx; (x > xx - blurSize && x > 0); x--)
+                    AddPixel(Input.Load(int3(x, yy, 0)));
+
+                CalcPixel();
+                for (x = xx; x < xx + blurSize && x < _W; x++) 
+                    Result[float2(x, yy)] = float4(0, 0, 0, avg);
+            }
+        }
+    }
+    else
+    {
+        for (xx = 0; xx < _W; xx++)
+        {
+            for (yy = 0; yy < _H; yy++)
+            {
+                ResetPixel();
+
+                    //Over pixel
+                for (y = yy; (y < yy + blurSize && y < _H); y++)
+                    AddPixel(Input.Load(int3(xx, y, 0)));
+                    //Under pixel
+
+                for (y = yy; (y > yy - blurSize && y > 0); y--)
+                    AddPixel(Input.Load(int3(xx, y, 0)));
+
+                CalcPixel();
+
+                for (y = yy; y < yy + blurSize && y < _H; y++)
+                    Result[float2(xx, y)] = float4(0, 0, 0, avg);
+            }
+        }
+    }
+*/
